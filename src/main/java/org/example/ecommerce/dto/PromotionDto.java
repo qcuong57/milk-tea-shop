@@ -1,17 +1,27 @@
 package org.example.ecommerce.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class PromotionDto {
-    private Long id;
+    private UUID id;
     private String code;
+    private String name;
     private Double discountPercentage;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+    private Boolean isActive;
+
+    public PromotionDto(UUID id, String code, String name, Double discountPercentage, LocalDateTime startDate, LocalDateTime endDate, Boolean isActive) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.discountPercentage = discountPercentage;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.isActive = isActive;
+    }
 }

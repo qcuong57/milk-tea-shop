@@ -1,17 +1,22 @@
 package org.example.ecommerce.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+import java.util.UUID;
+
+@Data
 public class ReviewDto {
-    private Long userId;
-    private Long productId;
-    private Integer rating;
+    private UUID id;
+    private UUID userId;
+    private UUID productId;
+    private int rating;
     private String comment;
+
+    public ReviewDto(UUID id, UUID userId, UUID productId, int rating, String comment) {
+        this.id = id;
+        this.userId = userId;
+        this.productId = productId;
+        this.rating = rating;
+        this.comment = comment;
+    }
 }
